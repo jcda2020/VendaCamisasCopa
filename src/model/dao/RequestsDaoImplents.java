@@ -4,12 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mysql.cj.jdbc.StatementImpl;
 import dao.VendasMethods;
 import db.DB;
 import db.DbException;
+import model.Products;
 import model.Requests;
+import model.Users;
 
 public class RequestsDaoImplents implements VendasMethods{	
 	
@@ -68,7 +72,7 @@ public class RequestsDaoImplents implements VendasMethods{
 	}
 
 	@Override
-	public Requests findPedidos(String email_usuario) {
+	public List<Requests>findPedidos(String email_usuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -90,6 +94,41 @@ public class RequestsDaoImplents implements VendasMethods{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public List<Requests> findPedidos() {
+		List<Requests> listProductsOrded = new ArrayList<>();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM pedidos";	
+		
+		try {
+			stmt = conn.prepareStatement(sql);
+			rs = stmt.executeQuery();			
+		
+			while (rs.next()) {
+				Requests pedido = new Requests();
+				Users user = new Users ();
+				pedido.setQuantidade(rs.getInt("quantidade"));
+				pedido.setId(rs.getInt(rs.getInt("id")));
+				pedido.setEmail_usuarios(pedido.getEmail_usuarios().getEmail());
+				listProductsOrded.add(pedido);
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			DB.closeStatement(stmt);
+			DB.closeResultset(rs);
+		}
+		
+		
+		return listProductsOrded;
+	}
+
 	
 	
 	

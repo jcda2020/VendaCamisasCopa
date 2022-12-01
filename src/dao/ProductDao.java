@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import model.Products;
+import model.Users;
 
 public interface ProductDao {
 void inseriProduto(Products produto);

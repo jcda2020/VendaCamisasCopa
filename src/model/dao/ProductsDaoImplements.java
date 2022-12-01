@@ -10,6 +10,7 @@ import java.util.List;
 import dao.ProductDao;
 import db.DB;
 import model.Products;
+import model.Users;
 
 public class ProductsDaoImplements implements ProductDao{
 	private Connection conn;
@@ -28,7 +29,7 @@ public class ProductsDaoImplements implements ProductDao{
 	@Override
 	public List<Products> findAll() {
 		
-		List<Products> tarefas = new ArrayList<>();
+		List<Products> listProducts = new ArrayList<>();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT * FROM produtos";	
@@ -45,7 +46,7 @@ public class ProductsDaoImplements implements ProductDao{
 				produto.setSize(rs.getString("tamanho"));
 				produto.setPrice(rs.getDouble("preco"));
 				produto.setId(rs.getInt(rs.getInt("id")));
-				tarefas.add(produto);
+				listProducts.add(produto);
 				
 			}
 			
@@ -59,7 +60,7 @@ public class ProductsDaoImplements implements ProductDao{
 		}
 		
 		
-		return tarefas;
+		return listProducts;
 		
 		
 		
@@ -83,6 +84,8 @@ public class ProductsDaoImplements implements ProductDao{
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 	
 	
