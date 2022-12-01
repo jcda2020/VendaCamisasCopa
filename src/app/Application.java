@@ -9,9 +9,11 @@ import model.Requests;
 import model.dao.ProductsDaoImplements;
 import model.dao.RequestsDaoImplents;
 
-public class App {
-	
+public class Application {
+
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
 
 		Scanner leiaValores = new Scanner(System.in);
 		
@@ -57,7 +59,7 @@ public class App {
 		
 		
 		pedido.inseriPedido(compra);
+
 	}
-	
 
 }

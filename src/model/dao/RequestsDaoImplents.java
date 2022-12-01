@@ -20,7 +20,7 @@ public class RequestsDaoImplents implements VendasMethods{
 	private Connection conn;
 
 	public RequestsDaoImplents(Connection conn) {
-		super();
+		
 		this.conn = conn;
 	}
 
@@ -109,9 +109,12 @@ public class RequestsDaoImplents implements VendasMethods{
 			while (rs.next()) {
 				Requests pedido = new Requests();
 				Users user = new Users ();
-				pedido.setQuantidade(rs.getInt("quantidade"));
+				
 				pedido.setId(rs.getInt(rs.getInt("id")));
-				pedido.setEmail_usuarios(pedido.getEmail_usuarios().getEmail());
+				pedido.setQuantidade(rs.getInt("quantidade"));
+				
+				pedido.setEmail_usuarios((Users) rs.getObject("email_usuarios"));
+				
 				listProductsOrded.add(pedido);
 				
 			}

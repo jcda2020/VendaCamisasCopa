@@ -20,6 +20,10 @@ public class ProductsDaoImplements implements ProductDao{
 		this.conn = conn;
 	}
 
+	public ProductsDaoImplements() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void inseriProduto(Products produto) {
 		// TODO Auto-generated method stub
