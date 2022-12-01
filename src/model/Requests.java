@@ -89,7 +89,7 @@ public class Requests {
 
 	@Override
 	public String toString() {
-		return "Requests [id=" + id + ", valor_total=" + valor_total + ", quantidade=" + quantidade + ", id_produtos="
+		return "RequestsDaoImplents [id=" + id + ", valor_total=" + valor_total + ", quantidade=" + quantidade + ", id_produtos="
 				+ id_produtos + ", email_usuarios=" + email_usuarios + "]";
 	}
 	

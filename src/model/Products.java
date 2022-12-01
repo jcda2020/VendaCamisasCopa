@@ -37,6 +37,47 @@ private String selecao;
 	public int hashCode() {
 		return Objects.hash(id, padrao, price, selecao, size);
 	}
+	
+
+	public String getSelecao() {
+		return selecao;
+	}
+
+	public void setSelecao(String selecao) {
+		this.selecao = selecao;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
+	public String getPadrao() {
+		return padrao;
+	}
+
+	public void setPadrao(String padrao) {
+		this.padrao = padrao;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	@Override
 	public boolean equals(Object obj) {
